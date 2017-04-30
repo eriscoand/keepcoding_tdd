@@ -18,14 +18,14 @@ struct Bill {
         _currency = "EUR"
     }
     
+}
+
+extension Bill: MoneyProtocol {
+    
     init(amount: Int, currency: Currency = "EUR"){
         _amount = amount
         _currency = currency
     }
-    
-}
-
-extension Bill: MoneyProtocol {
     
     func times(_ c :Int) -> Bill{
         return Bill(amount: c * _amount, currency: _currency)
