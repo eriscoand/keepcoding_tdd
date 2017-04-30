@@ -14,12 +14,14 @@ class MoneyTests: XCTestCase {
     var five: Money!
     var otherFive: Money!
     var ten: Money!
+    var broker: Broker!
     
     override func setUp() {
         super.setUp()
         five = Money(amount: 5)
         otherFive = Money(amount: 5)
         ten = Money(amount: 10)
+        broker = Broker()
     }
     
     override func tearDown() {
@@ -50,6 +52,10 @@ class MoneyTests: XCTestCase {
     
     func testSimpleAddition(){
         XCTAssertEqual(ten, five.plus(otherFive))
+    }
+    
+    func testSimpleReduction(){
+        XCTAssertEqual(try! five.reduced(to: "EUR", broker: broker), five)
     }
     
     

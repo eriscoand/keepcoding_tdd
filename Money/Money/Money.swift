@@ -31,6 +31,10 @@ struct Money {
         return Money(amount: money._amount + _amount, currency: _currency)
     }
     
+    func reduced(to: Currency, broker: Broker) throws -> Money{
+        return Money(amount: _amount, currency: to)
+    }
+    
 }
 
 extension Money: Hashable {
