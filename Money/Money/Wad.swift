@@ -27,13 +27,17 @@ extension Wad : MoneyProtocol{
     
     func times(_ c:Int)->Wad{
         
-        var total = Bills()
+        /*var total = Bills()
         for each in _bills {
             let b = Bill(amount: each._amount * c, currency: each._currency)
             total.append(b)
         }
+        return Wad(_bills: total)*/
         
-        return Wad(_bills: total)
+        return Wad(_bills: _bills.map({ (bill) -> Bill in
+            bill.times(c)
+        }))
+        
         
     }
     
