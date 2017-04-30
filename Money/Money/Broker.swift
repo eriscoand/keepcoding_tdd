@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Broker{
+struct Broker: Rater{
     
     var _rates = RatesDictionary()
     
@@ -16,7 +16,7 @@ struct Broker{
         return "\(from)-\(to)"
     }
     
-    mutating func addCurrency(exchange: Exchange, rate: Rate){
+    mutating func addRate(exchange: Exchange, rate: Rate){
         
         //Direct
         _rates[key(from: exchange.from, to: exchange.to)] = rate;

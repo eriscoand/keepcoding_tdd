@@ -8,36 +8,66 @@
 
 import Foundation
 
-struct Wad{
+struct Wad {
     var _bills = Bills()
     
-    var _amount: Int
-    var _currency: Currency
-    
-    init(){
-        _amount = 0
-        _currency = "EUR"
+    func sum() -> Value {
+        return _bills.reduce(0, { (add, bill) -> Int in
+            add + bill._amount
+        })
     }
     
 }
 
 extension Wad : MoneyProtocol{
     
-    init(amount: Int, currency: Currency = "EUR"){
-        _amount = amount
-        _currency = currency
+    init(amount: Value, currency: Currency = "EUR"){
+        _bills.append(Bill(amount: amount, currency: currency))
     }
     
-    func times(_ n:Int)->Wad{
+    func times(_ c:Int)->Wad{
         return self
     }
     
     func plus(_ addend: Wad)-> Wad{
-        return self
+        return Wad(_bills: _bills + addend._bills)
     }
     
-    func reduced(to: Currency, broker: Broker) throws -> Wad{
-        return self
+    func reduced(to: Currency, broker: Rater) throws -> Bill{
+        
+        return try _bills.reduce(Bill(amount: 0, currency: to)) { (result, bill) -> Bill in
+            try result.reduced(to: to, broker: broker).plus(try bill.reduced(to: to, broker: broker))
+        }
+        
     }
     
 }
+
+extension Wad: Equatable {
+    static func ==(lhs: Wad, rhs: Wad) -> Bool {
+        // Se convierte todo a USD y se compara los valores finales
+        let broker = UnityBroker()
+        
+        let leftBill = try! lhs.reduced(to: "USD", broker: broker)
+        let rightBill = try! rhs.reduced(to: "USD", broker: broker)
+        
+        return leftBill == rightBill
+    }
+}
+
+extension Wad: CustomStringConvertible {
+    var description: String {
+        if _bills.count == 0 {
+            return "Empty"
+        }else{
+            return _bills.reduce("", { (concatenate, bill) -> String in
+                concatenate + bill.description
+            })
+        }
+    }
+}
+
+
+
+
+

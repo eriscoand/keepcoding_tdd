@@ -22,6 +22,7 @@ class MoneyTests: XCTestCase {
         otherFive = Bill(amount: 5)
         ten = Bill(amount: 10)
         broker = Broker()
+        broker.addRate(exchange: Exchange(from: "EUR", to: "USD"), rate: 2)
     }
     
     func testCanCreateEuro(){

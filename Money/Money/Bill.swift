@@ -10,7 +10,7 @@ import Foundation
 
 struct Bill {
     
-    var _amount: Int
+    var _amount: Value
     var _currency: Currency
     
     init(){
@@ -22,7 +22,7 @@ struct Bill {
 
 extension Bill: MoneyProtocol {
     
-    init(amount: Int, currency: Currency = "EUR"){
+    init(amount: Value, currency: Currency = "EUR"){
         _amount = amount
         _currency = currency
     }
@@ -35,14 +35,16 @@ extension Bill: MoneyProtocol {
         return Bill(amount: money._amount + _amount, currency: _currency)
     }
     
-    func reduced(to: Currency, broker: Broker) throws -> Bill{
-        return Bill(amount: _amount, currency: to)
+    func reduced(to: Currency, broker: Rater) throws -> Bill{
+        let exchange = Exchange(from: _currency, to: to)
+        let rate = try! broker.rate(exchange: exchange)
+        return Bill(amount: _amount * rate, currency: to)
     }
     
 }
 
 extension Bill: Hashable {
-    var hashValue: Int {
+    var hashValue: Value {
         return _amount.hashValue
     }
 }

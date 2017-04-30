@@ -8,6 +8,7 @@
 
 import Foundation
 
+typealias Value = Int
 typealias Currency = String
 
 typealias Exchange = (from: Currency, to: Currency)
@@ -16,3 +17,5 @@ typealias Rate = Int
 typealias RatesDictionary = [String:Rate]
 
 typealias Bills = [Bill]
+
+struct UnityBroker : Rater{}
