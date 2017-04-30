@@ -53,5 +53,4 @@ class MoneyTests: XCTestCase {
         XCTAssertEqual(try! five.reduced(to: "EUR", broker: broker), five)
     }
     
-    
 }

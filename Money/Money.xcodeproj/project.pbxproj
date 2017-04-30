@@ -19,6 +19,7 @@
 		335931AE1EB638C900AD2AA4 /* MoneyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335931AD1EB638C900AD2AA4 /* MoneyError.swift */; };
 		335931B01EB642B300AD2AA4 /* MoneyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335931AF1EB642B300AD2AA4 /* MoneyProtocol.swift */; };
 		335931B31EB6438100AD2AA4 /* Wad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335931B21EB6438100AD2AA4 /* Wad.swift */; };
+		335931B51EB6489B00AD2AA4 /* WadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335931B41EB6489B00AD2AA4 /* WadTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		335931AD1EB638C900AD2AA4 /* MoneyError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyError.swift; sourceTree = "<group>"; };
 		335931AF1EB642B300AD2AA4 /* MoneyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyProtocol.swift; sourceTree = "<group>"; };
 		335931B21EB6438100AD2AA4 /* Wad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wad.swift; sourceTree = "<group>"; };
+		335931B41EB6489B00AD2AA4 /* WadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WadTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				3359319B1EB62A8800AD2AA4 /* MoneyTests.swift */,
+				335931B41EB6489B00AD2AA4 /* WadTests.swift */,
 				3359319D1EB62A8800AD2AA4 /* Info.plist */,
 			);
 			path = MoneyTests;
@@ -250,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335931B51EB6489B00AD2AA4 /* WadTests.swift in Sources */,
 				3359319C1EB62A8800AD2AA4 /* MoneyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
