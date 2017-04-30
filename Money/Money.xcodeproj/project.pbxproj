@@ -13,9 +13,12 @@
 		3359318E1EB62A8800AD2AA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359318D1EB62A8800AD2AA4 /* Assets.xcassets */; };
 		335931911EB62A8800AD2AA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3359318F1EB62A8800AD2AA4 /* LaunchScreen.storyboard */; };
 		3359319C1EB62A8800AD2AA4 /* MoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359319B1EB62A8800AD2AA4 /* MoneyTests.swift */; };
-		335931A71EB62B7500AD2AA4 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335931A61EB62B7500AD2AA4 /* Money.swift */; };
+		335931A71EB62B7500AD2AA4 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335931A61EB62B7500AD2AA4 /* Bill.swift */; };
 		335931AA1EB630EE00AD2AA4 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335931A91EB630EE00AD2AA4 /* Typealias.swift */; };
 		335931AC1EB636EF00AD2AA4 /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335931AB1EB636EF00AD2AA4 /* Broker.swift */; };
+		335931AE1EB638C900AD2AA4 /* MoneyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335931AD1EB638C900AD2AA4 /* MoneyError.swift */; };
+		335931B01EB642B300AD2AA4 /* MoneyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335931AF1EB642B300AD2AA4 /* MoneyProtocol.swift */; };
+		335931B31EB6438100AD2AA4 /* Wad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335931B21EB6438100AD2AA4 /* Wad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +42,12 @@
 		335931971EB62A8800AD2AA4 /* MoneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3359319B1EB62A8800AD2AA4 /* MoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyTests.swift; sourceTree = "<group>"; };
 		3359319D1EB62A8800AD2AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		335931A61EB62B7500AD2AA4 /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		335931A61EB62B7500AD2AA4 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		335931A91EB630EE00AD2AA4 /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		335931AB1EB636EF00AD2AA4 /* Broker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broker.swift; sourceTree = "<group>"; };
+		335931AD1EB638C900AD2AA4 /* MoneyError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyError.swift; sourceTree = "<group>"; };
+		335931AF1EB642B300AD2AA4 /* MoneyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyProtocol.swift; sourceTree = "<group>"; };
+		335931B21EB6438100AD2AA4 /* Wad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,7 @@
 		335931851EB62A8800AD2AA4 /* Money */ = {
 			isa = PBXGroup;
 			children = (
+				335931B11EB642B900AD2AA4 /* Helpers */,
 				335931A81EB62B7C00AD2AA4 /* Class */,
 				335931861EB62A8800AD2AA4 /* AppDelegate.swift */,
 				335931881EB62A8800AD2AA4 /* ViewController.swift */,
@@ -106,11 +113,21 @@
 		335931A81EB62B7C00AD2AA4 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				335931A61EB62B7500AD2AA4 /* Money.swift */,
-				335931A91EB630EE00AD2AA4 /* Typealias.swift */,
+				335931A61EB62B7500AD2AA4 /* Bill.swift */,
 				335931AB1EB636EF00AD2AA4 /* Broker.swift */,
+				335931B21EB6438100AD2AA4 /* Wad.swift */,
 			);
 			name = Class;
+			sourceTree = "<group>";
+		};
+		335931B11EB642B900AD2AA4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				335931AF1EB642B300AD2AA4 /* MoneyProtocol.swift */,
+				335931A91EB630EE00AD2AA4 /* Typealias.swift */,
+				335931AD1EB638C900AD2AA4 /* MoneyError.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,11 +235,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335931B31EB6438100AD2AA4 /* Wad.swift in Sources */,
 				335931891EB62A8800AD2AA4 /* ViewController.swift in Sources */,
 				335931871EB62A8800AD2AA4 /* AppDelegate.swift in Sources */,
 				335931AA1EB630EE00AD2AA4 /* Typealias.swift in Sources */,
 				335931AC1EB636EF00AD2AA4 /* Broker.swift in Sources */,
-				335931A71EB62B7500AD2AA4 /* Money.swift in Sources */,
+				335931AE1EB638C900AD2AA4 /* MoneyError.swift in Sources */,
+				335931A71EB62B7500AD2AA4 /* Bill.swift in Sources */,
+				335931B01EB642B300AD2AA4 /* MoneyProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

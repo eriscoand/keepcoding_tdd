@@ -9,3 +9,8 @@
 import Foundation
 
 typealias Currency = String
+
+typealias Exchange = (from: Currency, to: Currency)
+
+typealias Rate = Int
+typealias RatesDictionary = [String:Rate]
